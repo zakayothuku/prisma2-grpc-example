@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package farm;
+
+service Farm {
+    rpc Farmers (FarmersRequest) returns (FarmersResponse) {
+    };
+    rpc Products (ProductsRequest) returns (ProductsResponse) {
+    };
+}
+
+message Farmer {
+    string id = 1;
+    string farmerId = 2;
+    string firstName = 3;
+    string lastName = 4;
+    string createdAt = 5;
+    string updatedAt = 6;
+    repeated Product products = 7;
+}
+
+message Product {
+    string id = 1;
+    string qrCode = 2;
+    string productType = 3;
+    string productName = 4;
+    string plantedOn = 5;
+    string harvestedOn = 6;
+    string createdAt = 7;
+    string updatedAt = 8;
+    Farmer farmer = 9;
+}
+
+message FarmersRequest {
+}
+message FarmersResponse {
+    repeated Farmer farmers = 1;
+}
+
+message ProductsRequest {
+}
+message ProductsResponse {
+    repeated Product products = 1;
+}

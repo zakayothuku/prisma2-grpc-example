@@ -1,0 +1,19 @@
+{
+  "name": "farmers-grpc",
+  "dependencies": {
+    "@grpc/proto-loader": "0.5.1",
+    "chalk": "2.4.2",
+    "grpc": "1.21.1",
+    "protobufjs": "6.8.8"
+  },
+  "scripts": {
+    "start": "ts-node ./server/server.ts",
+    "seed": "ts-node prisma/seed.ts",
+    "farmers": "ts-node client/farmers.ts",
+    "postinstall": "prisma2 generate"
+  },
+  "devDependencies": {
+    "ts-node": "^8.3.0",
+    "typescript": "3.5.2"
+  }
+}
