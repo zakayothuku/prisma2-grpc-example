@@ -4,7 +4,7 @@ This example shows how to implement a **gRPC API with TypeScript** using Prisma2
 
 ## How to use
 
-### 1. Download example & install dependencies
+### 1. Clone repository & install dependencies
 
 Clone the repository
 Install Node dependencies:
@@ -24,6 +24,7 @@ npm install -g prisma2
 
 ### 3. Set up database
 First, create a dev.db file in the prisma folder.
+
 ```jshint
 touch dev.db
 ```
@@ -62,7 +63,3 @@ The server is now running on `0.0.0.0:50051`.
 ### 6. Using the gRPC API
 
 To use the gRPC API, you need a gRPC client. We provide several client scripts inside the [`./client`](./client) directory. Each script is named according to the operation it performs against the gRPC API (e.g. the [`farmers.ts`](./client/farmers.ts) script sends the [`Farmers`](./service.proto) operation). Each script can be invoked by running the corresponding NPM script defined in [`package.json`](./package.json), e.g. `npm run farmers`.
-
-In case you prefer a GUI client, we recommend [BloomRPC](https://github.com/uw-labs/bloomrpc):
-
-![Screenshot of BloomRPC](https://imgur.com/0EiIo03.png)
