@@ -4,7 +4,7 @@ This example shows how to implement a **gRPC API with TypeScript** using Prisma2
 
 ## How to use
 
-### 1. Download example & install dependencies
+### 1. Clone repository & install dependencies
 
 Clone the repository
 Install Node dependencies:
@@ -24,6 +24,7 @@ npm install -g prisma2
 
 ### 3. Set up database
 First, create a dev.db file in the prisma folder.
+
 ```jshint
 touch dev.db
 ```
