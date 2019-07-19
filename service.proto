@@ -22,13 +22,19 @@ message Farmer {
 message Product {
     string id = 1;
     string qrCode = 2;
-    string productType = 3;
+    ProductType productType = 3;
     string productName = 4;
     string plantedOn = 5;
     string harvestedOn = 6;
     string createdAt = 7;
     string updatedAt = 8;
     Farmer farmer = 9;
+}
+
+enum ProductType {
+    APPLE = 0;
+    GRAPES = 1;
+    BERRIES = 2;
 }
 
 message FarmersRequest {
