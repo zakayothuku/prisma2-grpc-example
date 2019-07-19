@@ -3,42 +3,21 @@ import Photon from '@generated/photon'
 const photon = new Photon();
 
 async function main() {
-    const user1 = await photon.users.create({
+    const farmer1 = await photon.farmers.create({
         data: {
-            email: 'alice@prisma.io',
-            name: 'Alice',
-            password: 'alice',
-            posts: {
-                create: {
-                    title: 'Join us for Prisma Day 2019 in Berlin',
-                    content: 'https://www.prisma.io/day/',
-                    published: true,
-                },
-            },
+            firstName: "John",
+            lastName: "Doe",
+            farmerId: "JD1"
         },
     });
-    const user2 = await photon.users.create({
+    const farmer2 = await photon.farmers.create({
         data: {
-            email: 'bob@prisma.io',
-            name: 'Bob',
-            password: 'alice',
-            posts: {
-                create: [
-                    {
-                        title: 'Subscribe to GraphQL Weekly for community news',
-                        content: 'https://graphqlweekly.com/',
-                        published: true,
-                    },
-                    {
-                        title: 'Follow Prisma on Twitter',
-                        content: 'https://twitter.com/prisma',
-                        published: false,
-                    },
-                ],
-            },
+            firstName: "Jane",
+            lastName: "Doe",
+            farmerId: "JD2"
         },
     });
-    console.log({user1, user2})
+    console.log({farmer1, farmer2})
 }
 
 main()
