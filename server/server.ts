@@ -29,22 +29,10 @@ server.addService(farm.Farm.service, {
 });
 
 server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure());
-const message = `
-The gRPC server is being started on ${chalk.bold(
-    `0.0.0.0:50051`,
-)}. You now can invoke any client script by its name, e.g.:
 
-${chalk.bold(`$ npm run feed`)}
-or
-${chalk.bold(`$ npm run signupUser`)}
-
-See ${chalk.bold(
-    `package.json`,
-)} for a list of all available scripts or use ${chalk.bold(
-    `BloomRPC`,
-)} if you prefer a GUI client (download: ${chalk.bold(
-    `https://github.com/uw-labs/bloomrpc`,
-)}).`;
+const message = `The gRPC server is being started on ${chalk.bold(`0.0.0.0:50051`,)}. 
+You now can invoke any client script by its name, e.g.:
+${chalk.bold(`$ npm run farmers`)}`;
 
 console.log(message);
 
