@@ -2,6 +2,7 @@ import chalk from 'chalk'
 import * as protoLoader from '@grpc/proto-loader'
 import * as grpc from 'grpc'
 import {farmers} from "./farmers";
+import {products} from "./products";
 
 const PROTO_PATH = __dirname + '/../service.proto';
 
@@ -19,6 +20,7 @@ const server = new grpc.Server();
 
 server.addService(farm.Farm.service, {
     farmers,
+    products
 });
 
 server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure());
