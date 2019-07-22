@@ -3,6 +3,7 @@ import * as protoLoader from '@grpc/proto-loader'
 import * as grpc from 'grpc'
 import {farmers} from "./farmers";
 import {products} from "./products";
+import {createFarmer} from "./create-farmer";
 
 const PROTO_PATH = __dirname + '/../service.proto';
 
@@ -20,7 +21,8 @@ const server = new grpc.Server();
 
 server.addService(farm.Farm.service, {
     farmers,
-    products
+    products,
+    createFarmer
 });
 
 server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure());
