@@ -7,6 +7,9 @@ service Farm {
     };
     rpc Products (ProductsRequest) returns (ProductsResponse) {
     };
+
+    rpc CreateFarmer (CreateFarmerRequest) returns (CreateFarmerResponse) {
+    };
 }
 
 message Farmer {
@@ -47,4 +50,14 @@ message ProductsRequest {
 }
 message ProductsResponse {
     repeated Product products = 1;
+}
+
+message CreateFarmerRequest {
+    string farmerId = 1;
+    string firstName = 2;
+    string lastName = 3;
+}
+
+message CreateFarmerResponse {
+    Farmer farmer = 1;
 }
